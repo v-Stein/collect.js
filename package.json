@@ -4,8 +4,9 @@
   "description": "Convenient and dependency free wrapper for working with arrays and objects.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha test/tests.js",
-    "prepublishOnly": "node_modules/babel-cli/bin/babel.js src --out-dir lib"
+    "test": "npm run transpile && node_modules/.bin/mocha test/tests.js",
+    "transpile": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
+    "prepublishOnly": "npm run transpile"
   },
   "babel": {
     "presets": [
